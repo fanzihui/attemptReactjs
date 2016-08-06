@@ -6,5 +6,6 @@ reactjs + react_router + reactdux
 cnpm install
 cnpm run dev
 ```
+[![preview](https://github.com/fanzihui/attemptReactjs/blob/master/preview.png "preview")](https://github.com/fanzihui/attemptReactjs/blob/master/preview.png "preview")
 这些代码是参考这个做的:
 [参考地址](https://github.com/learncodeacademy/react-js-tutorials "参考地址")
