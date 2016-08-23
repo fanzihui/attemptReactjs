@@ -4,10 +4,11 @@ import Article from "../components/Article";
 
 export default class Archives extends React.Component {
   render() {
-    const { query } = this.props.location;
+    const { query, pathname,key } = this.props.location;
     const { params } = this.props;
     const { article } = params;
     const { date, filter } = query;
+    
 
     const Articles = [
       "肖申克的救赎",
@@ -30,13 +31,17 @@ export default class Archives extends React.Component {
       "乱世佳人",
       "天堂电影院",
       "当幸福来敲门",
-    ].map((title, i) => <Article key={i} title={title}/> );
+    ];
+    let Articless = article ?
+    Articles.filter(title => title === article).map((title,i)=> <Article k={i} title={title} />) : 
+    Articles.map((title, i) => <Article k={i} title={title} path= {pathname} l={key}/> );
 
+    console.log(article);
     return (
       <div>
         <h1>Archives</h1>
-        article: {article}, date: {date}, filter: {filter}
-        <div class="row">{Articles}</div>
+        article: {article}, date: {date}, filter: {filter} pathname:{pathname}
+        <div class="row">{Articless}</div>
       </div>
     );
   }
